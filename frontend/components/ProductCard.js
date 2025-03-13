@@ -20,7 +20,7 @@ const ProductCard = ({ productData }) => {
       />
       <div className="p-4">
         <h3 className="text-lg font-bold">{name}</h3>
-        <p className="text-gray-700">{price}&nbsp;৳</p>
+        <p className="text-gray-700">{price}&nbsp;$</p>
         {quantity > 0 && <p className="text-gray-500">In stock: {quantity}</p>}
         {quantity == 0 && <p className="text-gray-500">Out of Stock.</p>}
         <div
