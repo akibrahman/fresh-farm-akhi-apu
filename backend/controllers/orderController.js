@@ -41,16 +41,8 @@ const updatePaymentStatus = asyncHandler(async (req, res) => {
     res.status(404);
     throw new Error("Order not found");
   }
-  const { id, status, updateTime, paymentMethod, currency, conversionRate } =
-    req.body;
+  const { status } = req.body;
 
-  const paymentResult = {
-    transactionID: id,
-    status,
-    updateTime,
-    currency,
-    conversionRate,
-  };
   if (status === "Success") {
     order.orderItems.forEach(async (item) => {
       await productModel.findByIdAndUpdate(item._id, {
@@ -59,9 +51,9 @@ const updatePaymentStatus = asyncHandler(async (req, res) => {
     });
   }
 
-  order.paymentResult = paymentResult;
+  order.paymentResult.status = status;
   order.deliveryStatus = status === "Success" ? "Processing" : "On-Hold";
-  order.paymentMethod = paymentMethod;
+  order.paymentMethod = "Stripe";
   await order.save();
   res.status(204).json();
 });

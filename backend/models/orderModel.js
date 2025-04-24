@@ -27,9 +27,7 @@ const orderSchema = mongoose.Schema(
         enum: ["Pending", "Success", "Failed"],
         default: "Pending",
       },
-      updateTime: { type: Date, default: Date.now() },
       currency: { type: String },
-      convertionRate: { type: Number },
     },
     totalAmount: { type: Number, required: true },
     deliveryStatus: {
