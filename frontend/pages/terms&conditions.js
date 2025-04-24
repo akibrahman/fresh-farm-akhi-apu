@@ -19,7 +19,7 @@ const TermsAndConditions = () => {
 
       <p className="mb-4">
         Welcome to Elevate Mart. By accessing our website at
-        www.elevatemart.com, you agree to these terms and conditions.
+        www.farmfresh.com, you agree to these terms and conditions.
       </p>
 
       <h2 className="text-2xl font-semibold mt-6 mb-3">
@@ -72,7 +72,7 @@ const TermsAndConditions = () => {
       </h2>
       <p className="mb-4">
         If you have any questions about these Terms, please contact us at:{" "}
-        <a href="mailto:efat131226@gmail.com">support.elevatemart.com</a>
+        <a href="mailto:efat131226@gmail.com">support.farmfresh.com</a>
       </p>
 
       <p className="mt-8 text-sm text-gray-600">{`Last updated: ${date}`}</p>

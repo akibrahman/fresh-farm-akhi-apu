@@ -44,7 +44,7 @@ const otpEmailTemplate = (user, otp, verifyURL) => {
                                         <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Please verify your account
                                         </h1>
                                         <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
-                                            Welcome <strong>${user.name}</strong> to the elevatemart.com. We are one of the largest ecommerce around the world. Thanks for creating an account on elevatemart.com.</p>
+                                            Welcome <strong>${user.name}</strong> to the farmfresh.com. We are one of the largest ecommerce around the world. Thanks for creating an account on farmfresh.com.</p>
                                       <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;"> Before login you need to verify your account. click the following link and enter your OTP provided with this email.</p>
                                         <span
                                             style="display:inline-block; vertical-align:middle; margin:29px 0 0px; border-bottom:1px solid #cecece; width:100px;"></span>
@@ -70,7 +70,7 @@ const otpEmailTemplate = (user, otp, verifyURL) => {
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.elevatemart.com</strong> </p>
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.farmfresh.com</strong> </p>
                         </td>
                     </tr>
                     <tr>
@@ -156,7 +156,7 @@ const passwordResetEmailTemplate = (url) => {
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.elevatemart.com</strong></p>
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.farmfresh.com</strong></p>
                         </td>
                     </tr>
                     <tr>

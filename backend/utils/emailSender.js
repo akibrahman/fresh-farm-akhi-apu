@@ -23,7 +23,7 @@ const sendOTPEmail = async (user, otp, verifyURL) => {
   const transporter = createTransporter();
 
   const mailOptions = {
-    from: "Welcome <system@elevatemart.com>",
+    from: "Welcome <system@farmfresh.com>",
     to: user.email,
     subject: "OTP for email verification",
     html: otpEmailTemplate(user, otp, verifyURL),
@@ -36,7 +36,7 @@ const sendPasswordResetEmail = async (user, url) => {
   const transporter = createTransporter();
 
   const mailOptions = {
-    from: "Welcome <system@elevatemart.com>",
+    from: "Welcome <system@farmfresh.com>",
     to: user.email,
     subject: "Password Reset Email",
     html: passwordResetEmailTemplate(url),

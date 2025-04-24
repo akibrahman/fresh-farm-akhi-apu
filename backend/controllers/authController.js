@@ -122,8 +122,7 @@ const verifyUser = asyncHandler(async (req, res) => {
     active: true,
   });
 
-  const isMatch = await otpRecord.isCorrect(otp);
-
+  const isMatch = await otpRecord.isCorrect(otp.toString().trim());
   if (!otpRecord || !isMatch) {
     res.status(400);
     throw new Error("Invalid OTP. Please try again!");
@@ -173,13 +172,13 @@ const requestOTP = asyncHandler(async (req, res) => {
   });
 
   if (activeOTP) {
-    OTP.deleteOne({ _id: activeOTP._id });
+    console.log("Deleting=======================");
+    await OTP.deleteOne({ _id: activeOTP._id });
   }
 
   const newOtp = await createOTP(email, "verify");
 
   const verifyURL = `${process.env.FRONTEND_URL}/auth/verify/${req.params.email}`;
-
   await sendOTPEmail(user, newOtp, verifyURL);
 
   res.status(201).json({

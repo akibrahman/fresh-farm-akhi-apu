@@ -113,7 +113,7 @@ const resetPassword = () => {
           <img
             className="mx-auto h-10 w-auto"
             src="https://freepnglogo.com/images/all_img/1691819865alight-motion-logo-transparent.png"
-            alt="elevateMart logo"
+            alt="farmfresh logo"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Reset your account

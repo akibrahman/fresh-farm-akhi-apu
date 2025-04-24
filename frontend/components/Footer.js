@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-lightBlue-500 text-black p-4 mt-auto border-t border-gray-400 shadow-inner">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between">
-        <p className="text-sm">&copy; 2024 ElevateMart</p>
+        <p className="text-sm">&copy; 2024 FarmFresh</p>
         <ul className="flex space-x-4">
           <li>
             <Link

@@ -75,7 +75,7 @@ const MessageUs = () => {
             </div>
             <div className="flex items-center justify-center">
               <span
-                  className="mr-4 self-center text-2xl font-semibold whitespace-nowrap text-gray-900">ElevateMart</span>
+                  className="mr-4 self-center text-2xl font-semibold whitespace-nowrap text-gray-900">FarmFresh</span>
             </div>
             <div className="flex justify-center">
               <button

@@ -28,7 +28,6 @@ const createOTP = async (email, otpFor) => {
       ? process.env.VERIFY_OTP_VALIDITY
       : process.env.RESET_OTP_VALIDITY;
   const duration = parseInt(minutes) * 60 * 1000;
-
   await OTP.create({
     otp,
     email,

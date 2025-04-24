@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   userInfo:
     typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("elevateMart-userInfo"))
+      ? JSON.parse(localStorage.getItem("farmfresh-userInfo"))
       : null,
 };
 
@@ -16,7 +16,7 @@ const authSlice = createSlice({
       state.userInfo = action.payload;
       if (typeof window !== "undefined") {
         localStorage.setItem(
-          "elevateMart-userInfo",
+          "farmfresh-userInfo",
           JSON.stringify(action.payload)
         );
       }
@@ -29,7 +29,7 @@ const authSlice = createSlice({
     clearCredentials: (state) => {
       state.userInfo = null;
       if (typeof window !== "undefined") {
-        localStorage.removeItem("elevateMart-userInfo");
+        localStorage.removeItem("farmfresh-userInfo");
       }
     },
   },
