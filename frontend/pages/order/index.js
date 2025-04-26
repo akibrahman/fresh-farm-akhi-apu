@@ -80,7 +80,7 @@ const OrderPage = () => {
                     {order._id}
                   </td>
                   <td className="py-4 px-4 border-b border-indigo-100">
-                    {order.totalAmount.toFixed(2)} TK
+                    {order.totalAmount.toFixed(2)} USD
                   </td>
                   <td className="py-4 px-4 border-b border-indigo-100">
                     <span
@@ -119,7 +119,7 @@ const OrderPage = () => {
                       {order.orderItems.map((item, index) => (
                         <p className="text-sm">
                           {item?.product?.name} X {item?.quantity} = &nbsp;
-                          {`${(item.price * item.quantity).toFixed(2)}`} Tk
+                          {`${(item.price * item.quantity).toFixed(2)}`} USD
                         </p>
                       ))}
                     </div>

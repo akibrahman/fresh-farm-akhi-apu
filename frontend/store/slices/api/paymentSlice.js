@@ -5,16 +5,16 @@ const paymentApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createPaymentIntent: builder.mutation({
       query: (payment) => ({
-        url: `${PAYMENT_URL}`,
+        url: `${PAYMENT_URL}`, // `/api/payment`
         method: "POST",
         body: payment,
       }),
     }),
     paymentVerification: builder.mutation({
-      query: (orderID) => ({
+      query: ({orderID, sessionId}) => ({
         url: `${PAYMENT_URL}/payment_verification`,
         method: "POST",
-        body: { orderID },
+        body: { orderID, sessionId },
       }),
     }),
   }),

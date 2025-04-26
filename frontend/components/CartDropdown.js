@@ -72,7 +72,7 @@ const CartDropdown = ({ isOpen, toggleCart }) => {
       const paymentIntent = {
         amount: cart.totalPayableAmount,
         orderID: orderId,
-        currency: "BDT",
+        currency: "USD",
       };
       const paymentResponse = await createPaymentIntent(paymentIntent).unwrap();
       toastManager.updateStatus(toastId, {
@@ -80,7 +80,7 @@ const CartDropdown = ({ isOpen, toggleCart }) => {
         render: "Redirecting to payment gateway...",
       });
       setTimeout(() => {
-        window.location.href = paymentResponse.payment_url;
+        window.location.href = paymentResponse.url;
       }, 2000);
       dispatch(deleteCart());
       toggleCart();
@@ -138,7 +138,7 @@ const CartDropdown = ({ isOpen, toggleCart }) => {
                         <div>
                           <div className="flex justify-between text-base font-medium text-gray-900">
                             <h3>{item.name}</h3>
-                            <p className="ml-4">{item.itemPrice} Tk</p>
+                            <p className="ml-4">{item.itemPrice} USD</p>
                           </div>
                           <p className="mt-1 text-sm text-gray-500">
                             {item.color || "Color"}
@@ -176,7 +176,7 @@ const CartDropdown = ({ isOpen, toggleCart }) => {
             <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
               <div className="flex justify-between text-base font-medium text-gray-900">
                 <p>Total amount:</p>
-                <p>{totalAmount} Tk</p>
+                <p>{totalAmount} USD</p>
               </div>
               <p className="mt-0.5 text-sm text-gray-500">
                 Shipping and taxes calculated at checkout.

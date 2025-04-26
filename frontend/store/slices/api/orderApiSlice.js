@@ -5,17 +5,18 @@ const orderApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     createOrder: builder.mutation({
       query: (order) => ({
-        url: `${ORDER_URL}`,
+        // Here Order Means { producst:[],totalAmounty:100}
+        url: `${ORDER_URL}`, // `/api/order`
         method: "POST",
         body: order,
       }),
       invalidatesTags: ["MyOrder", "AllOrders"],
     }),
     updatePaymentStatus: builder.mutation({
-      query: ({ orderID, paymentData }) => ({
+      query: ({ orderID, status }) => ({
         url: `${ORDER_URL}/${orderID}/payment`,
         method: "PATCH",
-        body: paymentData,
+        body: { status },
       }),
       invalidatesTags: ["MyOrder", "AllOrders"],
     }),
