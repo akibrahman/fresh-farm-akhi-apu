@@ -5,29 +5,29 @@ const PrivacyPolicy = () => {
     <div className="bg-gray-100 min-h-screen">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-          Privacy Policy for FarmFresh
+          Privacy Policy for Fresh Farm
         </h1>
 
         <div className="bg-white shadow-lg rounded-lg p-8">
           <p className="mb-6 text-gray-600">
             If you require any more information or have any questions about our
             privacy policy, please feel free to contact us by email at
-            <a href="mailto:contact@farmfresh.com">contact@farmfresh.com</a>
+            <a href="mailto:contact@freshfarm.com">contact@freshfarm.com</a>
             .
           </p>
 
           <p className="mb-6 text-gray-600">
-            At www.farmfresh.com we consider the privacy of our visitors to be
+            At www.freshfarm.com we consider the privacy of our visitors to be
             extremely important. This privacy policy document describes in
             detail the types of personal information is collected and recorded
-            by www.farmfresh.com and how we use it.
+            by www.freshfarm.com and how we use it.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">
             Log Files
           </h2>
           <p className="mb-6 text-gray-600">
-            Like many other Web sites, www.farmfresh.com makes use of log
+            Like many other Web sites, www.freshfarm.com makes use of log
             files. These files merely logs visitors to the site – usually a
             standard procedure for hosting companies and a part of hosting
             services's analytics. The information inside the log files includes
@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
             Cookies and Web Beacons
           </h2>
           <p className="mb-6 text-gray-600">
-            www.farmfresh.com uses cookies to store information about
+            www.freshfarm.com uses cookies to store information about
             visitors' preferences, to record user-specific information on which
             pages the site visitor accesses or visits, and to personalize or
             customize our web page content based upon visitors' browser type or
@@ -57,11 +57,11 @@ const PrivacyPolicy = () => {
           <ul className="list-disc list-inside mb-6 text-gray-600">
             <li className="mb-2">
               Google, as a third party vendor, uses cookies to serve ads on
-              www.farmfresh.com.
+              www.freshfarm.com.
             </li>
             <li className="mb-2">
               Google's use of the DART cookie enables it to serve ads to our
-              site's visitors based upon their visit to www.farmfresh.com and
+              site's visitors based upon their visit to www.freshfarm.com and
               other sites on the Internet.
             </li>
             <li className="mb-2">

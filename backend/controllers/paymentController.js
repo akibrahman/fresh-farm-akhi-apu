@@ -10,7 +10,7 @@ const createPaymentIntent = asyncHandler(async (req, res) => {
   try {
     const { amount, orderID, currency } = req.body;
     const { email, name, phone } = req.user;
-    const description = "FarmFresh Store Payment";
+    const description = "Fresh Farm Store Payment";
     const success_url = `${process.env.FRONTEND_URL}/payment/payment-successful?order_id=${orderID}&session_id={CHECKOUT_SESSION_ID}`;
     const cancel_url = `${process.env.FRONTEND_URL}?session_id={CHECKOUT_SESSION_ID}`;
     const order = await orderModel

@@ -33,7 +33,7 @@ const AdminNavbar = () => {
   return (
     <header className="bg-white shadow-sm p-4 flex justify-between items-center">
       <div className="text-2xl font-semibold text-gray-800">
-        <a href="/">Elevate-Mart</a>
+        <a href="/">Fresh Farm</a>
       </div>
       <div className="flex gap-5">
         <SearchBar />

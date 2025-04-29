@@ -142,7 +142,7 @@ const verifyUser = asyncHandler(async (req, res) => {
   res.status(201).json({
     status: "success",
     message:
-      "Welcome to FarmFresh! Your account has been verified successfully!",
+      "Welcome to Fresh Farm! Your account has been verified successfully!",
   });
 });
 

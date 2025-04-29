@@ -9,8 +9,8 @@ const emptyCart = {
 
 const initialState =
   typeof window !== "undefined"
-    ? localStorage.getItem("farmfresh-cart")
-      ? JSON.parse(localStorage.getItem("farmfresh-cart"))
+    ? localStorage.getItem("freshfarm-cart")
+      ? JSON.parse(localStorage.getItem("freshfarm-cart"))
       : emptyCart
     : emptyCart;
 
@@ -29,7 +29,7 @@ const cartSlice = createSlice({
       state.cartTotal += item.price;
       state.totalPayableAmount += item.updatedPrice;
       typeof window !== "undefined"
-        ? localStorage.setItem("farmfresh-cart", JSON.stringify(state))
+        ? localStorage.setItem("freshfarm-cart", JSON.stringify(state))
         : null;
     },
     removeFromCart: (state, action) => {
@@ -40,7 +40,7 @@ const cartSlice = createSlice({
       state.totalPayableAmount -=
         existingItem.itemPrice * existingItem.quantity;
       typeof window !== "undefined"
-        ? localStorage.setItem("farmfresh-cart", JSON.stringify(state))
+        ? localStorage.setItem("freshfarm-cart", JSON.stringify(state))
         : null;
     },
     increaseQuantity: (state, action) => {
@@ -50,7 +50,7 @@ const cartSlice = createSlice({
       state.cartTotal += existingItem.price;
       state.totalPayableAmount += existingItem.updatedPrice;
       typeof window !== "undefined"
-        ? localStorage.setItem("farmfresh-cart", JSON.stringify(state))
+        ? localStorage.setItem("freshfarm-cart", JSON.stringify(state))
         : null;
     },
     decreaseQuantity: (state, action) => {
@@ -63,7 +63,7 @@ const cartSlice = createSlice({
       state.cartTotal -= existingItem.price;
       state.totalPayableAmount -= existingItem.updatedPrice;
       typeof window !== "undefined"
-        ? localStorage.setItem("farmfresh-cart", JSON.stringify(state))
+        ? localStorage.setItem("freshfarm-cart", JSON.stringify(state))
         : null;
     },
     deleteCart: (state) => {
@@ -72,7 +72,7 @@ const cartSlice = createSlice({
       state.discount = 0;
       state.totalPayableAmount = 0;
       typeof window !== "undefined"
-        ? localStorage.removeItem("farmfresh-cart")
+        ? localStorage.removeItem("freshfarm-cart")
         : null;
     },
   },

@@ -77,7 +77,7 @@ const Header = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
-            FarmFresh
+            Fresh Farm
             </span>
           </a>
           <div className="flex md:order-2 items-center space-x-4">
