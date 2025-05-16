@@ -57,11 +57,11 @@ const ProductDetails = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="relative w-full border-2 border-green-300" style={{ height: '300px', maxWidth: '550px', margin: '15px auto 0' }}>
           <Image
-          src={`/${product.image}` || "/placeholder-image.jpg"}   
-          alt={`${product.name} image`}
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 w-full h-full"
+            src={`/${product.image}` || "/placeholder-image.jpg"}
+            alt={`${product.name} image`}
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0 w-full h-full"
           />
         </div>
 
@@ -76,9 +76,8 @@ const ProductDetails = () => {
                 <svg
                   key={index}
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 ${
-                    index < Math.round(averageRating) ? 'text-yellow-400' : 'text-gray-300'
-                  }`}
+                  className={`h-5 w-5 ${index < Math.round(averageRating) ? 'text-yellow-400' : 'text-gray-300'
+                    }`}
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -95,7 +94,7 @@ const ProductDetails = () => {
 
           <div className="flex items-center justify-between mb-6">
             <span className="text-3xl font-bold text-gray-700">
-              ৳{product.price.toFixed(2)}
+              ${product.price.toFixed(2)}
             </span>
           </div>
 
@@ -109,11 +108,10 @@ const ProductDetails = () => {
           <div className="flex items-center justify-center">
             <button
               onClick={addToCartFunction}
-              className={`w-[40%] py-3 px-6 rounded-lg transition duration-300 ease-in-out transform ${
-                product.quantity > 0
+              className={`w-[40%] py-3 px-6 rounded-lg transition duration-300 ease-in-out transform ${product.quantity > 0
                   ? 'bg-gray-700 text-white hover:bg-gray-600'
                   : 'bg-gray-400 text-gray-800 cursor-not-allowed'
-              }`}
+                }`}
               disabled={product.quantity <= 0}
             >
               {product.quantity > 0 ? "Add to Cart" : "Out of Stock"}
