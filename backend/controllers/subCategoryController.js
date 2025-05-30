@@ -9,7 +9,6 @@ const getSubCategory = asyncHandler(async (req, res) => {
   const subCategories = await subCategoryModel
     .find({})
     .populate("category_id", "name");
-
   res.status(200).json(subCategories);
 });
 
@@ -24,13 +23,8 @@ const createNewSubCategory = asyncHandler(async (req, res) => {
       return res.status(400).send("Category ID is required");
     }
 
-    const newSubCategory = new subCategoryModel(subCategoryData);
+    const newSubCategory = new subCategoryModel({ ...subCategoryData, category_id });
     const savedSubCategory = await newSubCategory.save();
-
-    await CategoryModel.updateOne(
-      { _id: category_id },
-      { $push: { subCategories: savedSubCategory._id } }
-    );
 
     res.status(200).send("SubCategory has been added");
   } catch (err) {
@@ -43,7 +37,8 @@ const createNewSubCategory = asyncHandler(async (req, res) => {
 // @access  Admin
 const updateSubCategory = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { name, description, categoryId } = req.body;
+  const { name, description, category_id } = req.body;
+  console.log(id, name, description, category_id)
 
   const subCategory = await subCategoryModel.findById(id);
 
@@ -54,18 +49,18 @@ const updateSubCategory = asyncHandler(async (req, res) => {
   subCategory.name = name || subCategory.name;
   subCategory.description = description || subCategory.description;
 
-  if (categoryId && categoryId !== subCategory.category_id.toString()) {
+  if (category_id && category_id !== subCategory.category_id.toString()) {
     await CategoryModel.updateOne(
       { _id: subCategory.category_id },
       { $pull: { subCategories: subCategory._id } }
     );
 
     await CategoryModel.updateOne(
-      { _id: categoryId },
+      { _id: category_id },
       { $push: { subCategories: subCategory._id } }
     );
 
-    subCategory.category_id = categoryId;
+    subCategory.category_id = category_id;
   }
 
   const updatedSubCategory = await subCategory.save();

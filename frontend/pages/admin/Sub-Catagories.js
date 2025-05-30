@@ -234,8 +234,8 @@ const SubCategory = () => {
                     }}
                   ></td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    {subCategory.category
-                      ? subCategory.category.name
+                    {subCategory.category_id
+                      ? subCategory.category_id.name
                       : "No Category"}
                   </td>
                   <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
