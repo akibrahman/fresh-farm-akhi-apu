@@ -141,10 +141,9 @@ const Dashboard = () => {
                   ? maxRevenue
                   : maxProductsSold;
               const suffix =
-                context.dataset.label === "Income" ? "BDT" : "units";
-              label += `${
-                (parseInt(context.parsed.y) * maxValue) / 100
-              } ${suffix}`;
+                context.dataset.label === "Income" ? "USD" : "units";
+              label += `${(parseInt(context.parsed.y) * maxValue) / 100
+                } ${suffix}`;
             }
             return label;
           },

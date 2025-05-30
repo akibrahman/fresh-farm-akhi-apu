@@ -81,7 +81,7 @@ const OrderDetails = () => {
                 </p>
                 <p className="text-gray-500 font-bold pt-10 pe-6">
                   Total:
-                  <span className="text-gray-600 ps-3">{`${order.totalAmount} BDT`}</span>
+                  <span className="text-gray-600 ps-3">{`${order.totalAmount} USD`}</span>
                 </p>
               </div>
               <p className="text-gray-600 pb-3">
