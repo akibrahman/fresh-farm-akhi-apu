@@ -23,6 +23,7 @@ const ViewOrders = () => {
   useEffect(() => {
     if (data) {
       setOrderList(data.orders);
+      console.log("??", data.orders);
     }
   }, [data]);
 
@@ -86,7 +87,17 @@ const ViewOrders = () => {
 
   const columns = React.useMemo(
     () => [
-      { Header: "Order ID", accessor: "_id" },
+      // { Header: "Order ID", accessor: "_id" },
+      {
+        Header: "Name & Email",
+        accessor: "orderBy", // we access the full orderBy object
+        Cell: ({ value }) => (
+          <div>
+            <div className="text-base font-medium">{value?.name}</div>
+            <div className="text-sm text-gray-500">{value?.email}</div>
+          </div>
+        ),
+      },
       {
         Header: "Created",
         accessor: "createdAt",
@@ -94,15 +105,31 @@ const ViewOrders = () => {
       },
       { Header: "Price", accessor: "totalAmount" },
       { Header: "Method", accessor: "paymentMethod" },
-      { Header: "Transaction ID", accessor: "paymentResult.transactionID" },
+      {
+        Header: "Order ID",
+        accessor: "_id",
+        Cell: ({ value }) => {
+          const last5 = value?.slice(-5) ?? "";
+          const masked = `*****${last5}`;
+          return <p title={value}>{masked}</p>;
+        }
+      },
+      {
+        Header: "Transaction ID",
+        accessor: "paymentResult.transactionID",
+        Cell: ({ value }) => {
+          const last5 = value?.slice(-5) ?? "";
+          const masked = `*****${last5}`;
+          return <p title={value}>{masked}</p>;
+        }
+      },
       {
         Header: "Payment",
         accessor: "paymentResult.status",
         Cell: ({ value }) => (
           <span
-            className={`font-bold ${
-              value === "Failed" ? "text-red-600" : "text-green-600"
-            }`}
+            className={`font-bold ${value === "Failed" ? "text-red-600" : "text-green-600"
+              }`}
           >
             {value}
           </span>
@@ -223,15 +250,14 @@ const ViewOrders = () => {
                     <tr
                       key={row.id}
                       {...row.getRowProps()}
-                      className={`hover:bg-gray-100 transition-colors duration-300 ${
-                        row.original.deliveryStatus === "Shipped"
-                          ? "bg-green-100"
-                          : row.original.deliveryStatus === "Delivered"
+                      className={`hover:bg-gray-100 transition-colors duration-300 ${row.original.deliveryStatus === "Shipped"
+                        ? "bg-green-100"
+                        : row.original.deliveryStatus === "Delivered"
                           ? "bg-green-200"
                           : row.original.deliveryStatus === "On-Hold"
-                          ? "bg-red-100"
-                          : ""
-                      }`}
+                            ? "bg-red-100"
+                            : ""
+                        }`}
                     >
                       {row.cells.map((cell) => (
                         <td

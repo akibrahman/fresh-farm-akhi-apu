@@ -117,7 +117,7 @@ const getOrders = asyncHandler(async (req, res) => {
   const orders = await orderModel
     .find(query)
     .populate({
-      path: "orderBy.product",
+      path: "orderBy",
       select: "name email",
     })
     .populate({
@@ -125,6 +125,7 @@ const getOrders = asyncHandler(async (req, res) => {
       select: "name image",
     })
     .sort({ createdAt: -1 });
+  console.log("Fetching from here", orders)
 
   res.status(200).json({
     success: true,
