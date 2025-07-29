@@ -69,6 +69,14 @@ const ProductDetails = () => {
           <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
             {product.name}
           </h1>
+          <div>
+            <p className="font-extrabold text-gray-800">
+              Category: {product?.category?.name}
+            </p>
+            <p className="font-extrabold text-gray-800">
+              Sub-Category: {product?.subCategory?.name}
+            </p>
+          </div>
 
           <div className="flex items-center mb-4">
             <div className="flex text-yellow-400">
@@ -109,8 +117,8 @@ const ProductDetails = () => {
             <button
               onClick={addToCartFunction}
               className={`w-[40%] py-3 px-6 rounded-lg transition duration-300 ease-in-out transform ${product.quantity > 0
-                  ? 'bg-gray-700 text-white hover:bg-gray-600'
-                  : 'bg-gray-400 text-gray-800 cursor-not-allowed'
+                ? 'bg-gray-700 text-white hover:bg-gray-600'
+                : 'bg-gray-400 text-gray-800 cursor-not-allowed'
                 }`}
               disabled={product.quantity <= 0}
             >

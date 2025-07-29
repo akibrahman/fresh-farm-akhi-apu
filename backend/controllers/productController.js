@@ -63,7 +63,7 @@ const getProducts = asyncHandler(async (req, res) => {
 // @route   GET /api/products/:slug
 // @access  Public
 const getProductBySlug = asyncHandler(async (req, res) => {
-  const product = await productModel.findOne({ slug: req.params.slug });
+  const product = await productModel.findOne({ slug: req.params.slug }).populate("category").populate("subCategory");
   if (!product) {
     res.status(404);
     throw new Error("Product not found");

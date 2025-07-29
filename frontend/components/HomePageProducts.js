@@ -21,6 +21,7 @@ const HomePageProducts = () => {
     }
   }, [productsData]);
 
+
   return (
     <div>
       <div className="w-[100%] mx-auto text-center pt-16">
