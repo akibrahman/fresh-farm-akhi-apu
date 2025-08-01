@@ -11,8 +11,8 @@ const ProductCard = ({ productData }) => {
 
   return (
     <div className="relative w-[90%] mx-auto bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden shadow-lg group">
-      {<p className="absolute top-20 right-0 bg-slate-700 font-semibold px-4 py-1 rounded opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 transition-all">{category?.name}</p>}
-      {<p className="absolute top-[120px] right-0 bg-slate-700 font-semibold px-4 py-1 rounded opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 transition-all">{subCategory?.name}</p>}
+      {<p className="absolute top-20 right-0 bg-slate-700 font-semibold px-4 py-1 rounded opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 transition-all text-white">{category?.name}</p>}
+      {<p className="absolute top-[120px] right-0 bg-slate-700 font-semibold px-4 py-1 rounded opacity-0 translate-x-full group-hover:opacity-100 group-hover:translate-x-0 duration-300 transition-all text-white">{subCategory?.name}</p>}
       <img
         src={`/${image}`}
         alt={name}
